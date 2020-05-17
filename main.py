@@ -1,5 +1,6 @@
 table = []
 file = open('input.csv', "r")
+file.readline()
 for line in file.readlines():
     table.append([float(j) for j in line.replace(",", ".").split(";")])
 file.close()
@@ -9,7 +10,7 @@ r_light = [""]
 r_dark = []
 v_max = []
 v_min = []
-for i in range(2, 1000):
+for i in range(1, 1000):
     if waiting_for_a_min:
         if table[i][1] > table[i - 1][1]:
             r_dark.append(table[i - 1][0])
